@@ -1,4 +1,4 @@
-import API_ENDPOINT from "../globals/api-endpoint";
+import API_ENDPOINT from '../globals/api-endpoint';
 
 class RestaurantDbSource {
   static async getRestaurants() {
@@ -16,9 +16,9 @@ class RestaurantDbSource {
   static async sendReview(data) {
     try {
       const response = await fetch(API_ENDPOINT.postReview, {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
       });

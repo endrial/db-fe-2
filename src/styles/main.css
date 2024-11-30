@@ -40,7 +40,7 @@ a:focus,
   background: #333;
   color: white;
   padding: 8px;
-  z-index: 100;
+  z-index: 10000;
   transition: top 0.2s;
 }
 

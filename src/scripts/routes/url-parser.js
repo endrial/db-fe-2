@@ -11,7 +11,7 @@ const UrlParser = {
   },
 
   _urlSplitter(url) {
-    const urlSplits = url.split("/");
+    const urlSplits = url.split('/');
     return {
       resource: urlSplits[1] || null,
       id: urlSplits[2] || null,
@@ -21,9 +21,9 @@ const UrlParser = {
 
   _urlCombiner(splitedUrl) {
     return (
-      (splitedUrl.resource ? `/${splitedUrl.resource}` : "/") +
-      (splitedUrl.id ? "/:id" : "") +
-      (splitedUrl.verb ? `${splitedUrl.verb}` : "")
+      (splitedUrl.resource ? `/${splitedUrl.resource}` : '/') +
+      (splitedUrl.id ? '/:id' : '') +
+      (splitedUrl.verb ? `${splitedUrl.verb}` : '')
     );
   },
 };

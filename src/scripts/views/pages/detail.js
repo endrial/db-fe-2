@@ -1,8 +1,8 @@
-import RestaurantDbSource from "../../data/restaurantdb-source";
-import UrlParser from "../../routes/url-parser";
-import { createDetailRestaurantTemplate } from "../templates/template-creator";
-import LikeButtonInitiator from "../../utils/like-button-initiator";
-import ImgDetailInitiator from "../../utils/img-detail-initiator";
+import RestaurantDbSource from '../../data/restaurantdb-source';
+import UrlParser from '../../routes/url-parser';
+import { createDetailRestaurantTemplate } from '../templates/template-creator';
+import LikeButtonInitiator from '../../utils/like-button-initiator';
+import ImgDetailInitiator from '../../utils/img-detail-initiator';
 
 const Detail = {
   async render() {
@@ -15,21 +15,21 @@ const Detail = {
 
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const restaurantContainer = document.querySelector("#detail");
-    const loaderElement = document.querySelector("loader-element");
-    const inputName = document.querySelector("#name");
-    const inputReview = document.querySelector("#review");
-    const formReview = document.querySelector("#form-review");
+    const restaurantContainer = document.querySelector('#detail');
+    const loaderElement = document.querySelector('loader-element');
+    const inputName = document.querySelector('#name');
+    const inputReview = document.querySelector('#review');
+    const formReview = document.querySelector('#form-review');
 
     const restaurant = await RestaurantDbSource.restaurantDetail(url.id);
-    loaderElement.classList.add("hidden");
+    loaderElement.classList.add('hidden');
 
     restaurantContainer.innerHTML = createDetailRestaurantTemplate(
       restaurant.restaurant
     );
 
     LikeButtonInitiator.init({
-      likeButtonContainer: document.querySelector("#likeButtonContainer"),
+      likeButtonContainer: document.querySelector('#likeButtonContainer'),
       restaurant: {
         id: restaurant.restaurant.id,
         name: restaurant.restaurant.name,
@@ -40,7 +40,7 @@ const Detail = {
       },
     });
 
-    ImgDetailInitiator.init(document.querySelector("section#detail figure"));
+    ImgDetailInitiator.init(document.querySelector('section#detail figure'));
   },
 };
 

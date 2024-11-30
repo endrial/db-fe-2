@@ -10,4 +10,4 @@ class LoaderElement extends HTMLElement {
   }
 }
 
-customElements.define("loader-element", LoaderElement);
+customElements.define('loader-element', LoaderElement);
