@@ -1,0 +1,396 @@
+html,
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  margin-top: 50px;
+}
+
+button,
+a,
+input[type="text"],
+textarea {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 10px;
+}
+
+button:focus,
+a:focus,
+.hamburger:focus,
+.nav-menu a:focus {
+  outline: 2px dashed #fff;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #333;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em;
+  background-color: #333;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5em;
+  cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 1em;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 14px 16px;
+}
+
+.hero {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #1d1e22;
+  position: relative;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  max-width: 1000px;
+  object-fit: cover;
+}
+
+.restaurants-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  column-gap: 20px;
+  padding: 1em;
+}
+
+.title-page {
+  text-align: center;
+  margin: 2em 0;
+}
+
+.list-restaurant {
+  text-align: center;
+}
+
+.restaurant-item {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.restaurant-item:hover {
+  transform: translateY(-4px);
+}
+
+.restaurant-item:focus {
+  outline: 2px solid #ff6347;
+  outline-offset: 4px;
+}
+
+.restaurant-item .restaurant-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.restaurant-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.restaurant-content h3 {
+  font-size: 1.25rem;
+  color: #333;
+  margin: 0 0 0.5rem;
+}
+
+.restaurant-location {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 0 1rem;
+}
+
+.detail-link {
+  margin-top: auto;
+  font-size: 0.9rem;
+  color: #ff6347;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.detail-link:hover,
+.detail-link:focus {
+  color: #e5533d;
+  text-decoration: underline;
+}
+
+.restaurant-details {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.restaurant-name {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.restaurant-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-info {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.restaurant-info p {
+  margin: 10px 0;
+}
+
+.restaurant-info strong {
+  color: #333;
+}
+
+.restaurant-menu {
+  margin-top: 30px;
+}
+
+.restaurant-menu h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.food-menu,
+.drink-menu {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.food-menu li,
+.drink-menu li {
+  background-color: #fff;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  color: #555;
+}
+
+.food-menu li:hover,
+.drink-menu li:hover {
+  background-color: #f1f1f1;
+}
+
+.customer-reviews {
+  margin-top: 40px;
+}
+
+.customer-reviews h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.reviews-list li {
+  background-color: #fff;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  color: #555;
+}
+
+.reviews-list li strong {
+  color: #333;
+  font-weight: 600;
+}
+
+.date-review {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 5px;
+  display: block;
+}
+
+.favorite-button {
+  display: block;
+  width: 200px;
+  margin: 2rem auto;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #ff6347;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.favorite-button:hover {
+  background-color: #e5533d;
+}
+.favorite-button:focus {
+  outline: 2px solid #e5533d;
+}
+
+.restaurant-content {
+  padding: 10px;
+}
+
+.restaurant-content i {
+  color: gold;
+  margin-right: 2px;
+}
+
+.rating-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.rating-tooltip:hover::after {
+  content: attr(aria-label);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  z-index: 10;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 80px;
+    margin: 0;
+    right: 0;
+    background-color: #333;
+    flex-direction: column;
+    padding: 1em;
+    z-index: 1000;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    padding: 10px;
+    position: absolute;
+    right: 5px;
+  }
+
+  .hero img {
+    width: 100%;
+    max-width: none;
+  }
+
+  .restaurants-container {
+    grid-template-columns: 1fr;
+  }
+
+  .restaurant-details {
+    padding: 15px;
+  }
+
+  .restaurant-name {
+    font-size: 2rem;
+  }
+
+  .restaurant-image {
+    width: 100%;
+    border-radius: 6px;
+  }
+
+  .restaurant-info p {
+    font-size: 0.9rem;
+  }
+
+  .restaurant-menu h3,
+  .customer-reviews h3 {
+    font-size: 1.5rem;
+  }
+
+  .reviews-list li,
+  .food-menu li,
+  .drink-menu li {
+    font-size: 0.9rem;
+  }
+}
