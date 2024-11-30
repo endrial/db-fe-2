@@ -1,6 +1,6 @@
-import routes from '../routes/routes';
-import UrlParser from '../routes/url-parser';
-import DrawerInitiator from '../utils/drawer-initiator';
+import routes from "../routes/routes";
+import UrlParser from "../routes/url-parser";
+import DrawerInitiator from "../utils/drawer-initiator";
 
 class App {
   constructor({ content, button, navList, navMenu, links }) {
@@ -24,6 +24,14 @@ class App {
   async renderPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
+    const skipLink = document.querySelector(".skip-link");
+    const mainContent = document.querySelector("#main-content");
+
+    skipLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      mainContent.scrollIntoView({ behavior: "smooth" });
+      skipLink.blur();
+    });
     this._content.innerHTML = await page.render();
     await page.afterRender();
   }
