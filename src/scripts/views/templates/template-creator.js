@@ -6,7 +6,6 @@ const createRestaurantItemTemplate = (restaurant) => `
       name="${restaurant.name}"
       city="${restaurant.city}"
       image="${CONFIG.BASE_IMAGE_URL}/${restaurant.pictureId}"
-      loading="lazy"
       rating="${restaurant.rating}"
       href="${`#/detail/${restaurant.id}`}"
       description="${restaurant.description}"
@@ -16,7 +15,7 @@ const createRestaurantItemTemplate = (restaurant) => `
 const createDetailRestaurantTemplate = (restaurant) => `
   <h2 class="restaurant-name">${restaurant.name}</h2>
   <figure>
-    <img src="${CONFIG.BASE_IMAGE_URL}/${restaurant.pictureId}" 
+    <img src="${CONFIG.BASE_IMAGE_URL}/${restaurant.pictureId} class="lazyload" 
     alt="${restaurant.name}" class="restaurant-image">
     <div class="restaurant-info">
       <p><strong>Address:</strong> ${restaurant.address}</p>

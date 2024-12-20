@@ -5,12 +5,17 @@ const Home = {
   async render() {
     return `
       <section class="hero" id="hero-section">
+        <picture>
+          <source
+            media="(max-width: 600px)"
+            srcset="./images/heros/hero-image_4-small.jpg"
           <img
             src="./images/heros/hero-image_4.jpg"
             alt="Hero Image"
             width="100%"
             loading="lazy"
           />
+        </picture>
       </section>
       <section class="container" id="restoran">
       <h1 class="title-page">Restau-Run List</h1>
