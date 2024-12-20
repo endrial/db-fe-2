@@ -8,13 +8,13 @@ const Home = {
         <picture>
           <source
             media="(max-width: 600px)"
-            srcset="./images/heros/hero-image_4-small.jpg"
+            srcset="./images/heros/hero-image_4-small.jpg">
           <img
             src="./images/heros/hero-image_4.jpg"
             alt="Hero Image"
             width="100%"
             loading="lazy"
-          />
+          >
         </picture>
       </section>
       <section class="container" id="restoran">
