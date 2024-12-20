@@ -1,4 +1,4 @@
-import CONFIG from '../../globals/config';
+import CONFIG from "../../globals/config";
 
 const createRestaurantItemTemplate = (restaurant) => `
     <card-element
@@ -6,6 +6,7 @@ const createRestaurantItemTemplate = (restaurant) => `
       name="${restaurant.name}"
       city="${restaurant.city}"
       image="${CONFIG.BASE_IMAGE_URL}/${restaurant.pictureId}"
+      loading="lazy"
       rating="${restaurant.rating}"
       href="${`#/detail/${restaurant.id}`}"
       description="${restaurant.description}"
@@ -30,15 +31,15 @@ const createDetailRestaurantTemplate = (restaurant) => `
       <h3>Food Menu</h3>
       <ul class="food-menu">
         ${restaurant.menus.foods
-    .map((food) => `<li>${food.name}</li>`)
-    .join('')}
+          .map((food) => `<li>${food.name}</li>`)
+          .join("")}
       </ul>
 
       <h3>Drink Menu</h3>
       <ul class="drink-menu">
         ${restaurant.menus.drinks
-    .map((drink) => `<li>${drink.name}</li>`)
-    .join('')}
+          .map((drink) => `<li>${drink.name}</li>`)
+          .join("")}
       </ul>
     </figure>
   </div>
@@ -48,13 +49,13 @@ const createDetailRestaurantTemplate = (restaurant) => `
       <h3>Customer Reviews</h3>
       <ul class="reviews-list">
         ${restaurant.customerReviews
-    .map(
-      (review) => `
+          .map(
+            (review) => `
               <li><strong>${review.name}</strong>: ${review.review}</li>
               <span class="date-review">${review.date}</span>
           `
-    )
-    .join('')}
+          )
+          .join("")}
       </ul>
     </figure>
   </div>

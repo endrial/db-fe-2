@@ -3,6 +3,8 @@ import "../styles/main.css";
 import App from "./views/app";
 import swRegister from "./utils/sw-register";
 import "./components/index.js";
+import "lazysizes";
+import "lazysizes/plugins/parent-fit/ls.parent-fit";
 
 const app = new App({
   content: document.getElementById("main-content"),
@@ -16,7 +18,7 @@ window.addEventListener("hashchange", () => {
   app.renderPage();
 });
 
-window.addEventListener("DOMContentLoad", () => {
+window.addEventListener("DOMContentLoaded", () => {
   app.renderPage();
   swRegister();
 });
